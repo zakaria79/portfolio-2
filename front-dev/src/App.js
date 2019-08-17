@@ -1,23 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AppBar from './components/app-bar/AppBar';
+import Drawer from './components/drawer/Drawer';
 
 function App() {
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (side, open) => event => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({...state, [side]: open});
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          <p>Je fais des tests</p>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
+        <AppBar toggleDrawer={toggleDrawer} />
+        <Drawer toggleDrawer={toggleDrawer} state={state} />
       </header>
     </div>
   );
