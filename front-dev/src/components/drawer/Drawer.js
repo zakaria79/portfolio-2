@@ -15,8 +15,6 @@ import CodeIcon from '@material-ui/icons/Code';
 import CollectionsIcon from '@material-ui/icons/Collections';
 import StorageIcon from '@material-ui/icons/Storage';
 import DevicesIcon from '@material-ui/icons/Devices';
-import ComputerIcon from '@material-ui/icons/Computer';
-import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
 import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -99,14 +97,6 @@ export default function TemporaryDrawer(props) {
           </ListItem>
         </Link>
 
-        <Link className={classes.link} to="/databases">
-          <ListItem button>
-            <ListItemIcon>
-              <StorageIcon />
-            </ListItemIcon>
-            <ListItemText primary="Bases de données" />
-          </ListItem>
-        </Link>
         <Link className={classes.link} to="/orm-odm-db">
           <ListItem button>
             <ListItemIcon>
@@ -121,22 +111,6 @@ export default function TemporaryDrawer(props) {
               <DevicesIcon />
             </ListItemIcon>
             <ListItemText primary="Environements" />
-          </ListItem>
-        </Link>
-        <Link className={classes.link} to="/os">
-          <ListItem button>
-            <ListItemIcon>
-              <ComputerIcon />
-            </ListItemIcon>
-            <ListItemText primary="Systèmes d'exploitations" />
-          </ListItem>
-        </Link>
-        <Link className={classes.link} to="/ide-editeurs">
-          <ListItem button>
-            <ListItemIcon>
-              <DeveloperModeIcon />
-            </ListItemIcon>
-            <ListItemText primary="IDE et Éditeurs" />
           </ListItem>
         </Link>
 

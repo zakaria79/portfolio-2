@@ -13,11 +13,8 @@ import Footer from './components/footer/Footer';
 import ContactForm from './components/contact-form/ContactForm';
 import Langages from './components/languages/Languages';
 import Frameworks from './components/frameworks/Frameworks';
-import Databases from './components/databases/Databases';
 import OrmOdmDB from './components/orm-odm-db/OrmOdmDB';
 import Environements from './components/environements/Environements';
-import OS from './components/os/OS';
-import IdeEditeurs from './components/ide-editeurs/IdeEditeurs';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -58,11 +55,8 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/langages" component={Langages} />
             <Route path="/frameworks" component={Frameworks} />
-            <Route path="/databases" component={Databases} />
             <Route path="/orm-odm-db" component={OrmOdmDB} />
             <Route path="/environements" component={Environements} />
-            <Route path="/os" component={OS} />
-            <Route path="/ide-editeurs" component={IdeEditeurs} />
             <Route path="/login" component={Login} />
           </Switch>
           <ContactForm />
