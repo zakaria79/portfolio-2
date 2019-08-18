@@ -89,7 +89,7 @@ const APropos = props => {
       <p>Formation intensive basée sur la pratique</p>
       <h3>2015 - 2019 : Veille constante</h3>
       <p>
-        Je fait beaucoup de veille technologique. Le Web évolue à une très
+        Je fais beaucoup de veille technologique. Le Web évolue à une très
         grande vitesse. De nouveaux frameworks apparaîssent tous les jours et Il
         est très facile de s'y perdre.
       </p>
@@ -98,7 +98,7 @@ const APropos = props => {
         intéressantes
         <em>(Docker, Devops, IA, AWS...)</em>
         et de m'y intéresser de plus près quand je pense qu'elles sont
-        pertinantes (ce qui n'est pas le cas avec tout ce qui est nouveau !)
+        pertinentes (ce qui n'est pas le cas avec tout ce qui est nouveau !)
       </p>
       <h2>Experience</h2>
 
