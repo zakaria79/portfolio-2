@@ -24,7 +24,7 @@ const RealisationsLsdla = props => {
         mon diplôme de fin de fomation <em>(Titre RNCP équivalent BAC+2)</em>
       </p>
       <p>
-        J'ai du d'ailleurs utiliser beaucoup de code natif (PHP, JS, SQL...)
+        J'ai dû d'ailleurs utiliser beaucoup de code natif (PHP, JS, SQL...)
         dans ce projet puisque c'était ce qui était demandé par le jury.
       </p>
       <p>

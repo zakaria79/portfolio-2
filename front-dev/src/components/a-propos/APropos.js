@@ -90,7 +90,7 @@ const APropos = props => {
       <h3>2015 - 2019 : Veille constante</h3>
       <p>
         Je fais beaucoup de veille technologique. Le Web évolue à une très
-        grande vitesse. De nouveaux frameworks apparaîssent tous les jours et Il
+        grande vitesse. De nouveaux frameworks apparaîssent tous les jours et il
         est très facile de s'y perdre.
       </p>
       <p>
