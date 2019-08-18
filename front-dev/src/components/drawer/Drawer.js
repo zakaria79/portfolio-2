@@ -1,14 +1,23 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import FaceIcon from '@material-ui/icons/Face';
+import StarsIcon from '@material-ui/icons/Stars';
+import LanguageIcon from '@material-ui/icons/Language';
+import CodeIcon from '@material-ui/icons/Code';
+import CollectionsIcon from '@material-ui/icons/Collections';
+import StorageIcon from '@material-ui/icons/Storage';
+import DevicesIcon from '@material-ui/icons/Devices';
+import ComputerIcon from '@material-ui/icons/Computer';
+import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles({
   list: {
@@ -16,6 +25,16 @@ const useStyles = makeStyles({
   },
   fullList: {
     width: 'auto',
+  },
+  link: {
+    color: 'rgba(0, 0, 0, 0.87)',
+  },
+  homeLink: {
+    color: '#3f51b5',
+    lineHeight: '.1',
+  },
+  homeSmall: {
+    fontSize: '.5rem',
   },
 });
 
@@ -29,55 +48,114 @@ export default function TemporaryDrawer(props) {
       onClick={props.toggleDrawer(side, false)}
       onKeyDown={props.toggleDrawer(side, false)}>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
+        <Link className={classes.homeLink} to="/">
+          <ListItem button>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <HomeIcon color="primary" />
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <div>
+              <ListItemText primary="Zakaria Othmane" />
+              <div>
+                <small className={classes.homeSmall}>
+                  Développeur Fullstack
+                </small>
+              </div>
+            </div>
           </ListItem>
-        ))}
+        </Link>
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
+        <Link className={classes.link} to="/a-propos">
+          <ListItem button>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <FaceIcon />
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary="À Propos" />
           </ListItem>
-        ))}
-      </List>
-    </div>
-  );
+        </Link>
+        <Link className={classes.link} to="/competences">
+          <ListItem button>
+            <ListItemIcon>
+              <StarsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Mes Compétences" />
+          </ListItem>
+        </Link>
+        <Link className={classes.link} to="/langages">
+          <ListItem button>
+            <ListItemIcon>
+              <LanguageIcon />
+            </ListItemIcon>
+            <ListItemText primary="Langages" />
+          </ListItem>
+        </Link>
+        <Link className={classes.link} to="/frameworks">
+          <ListItem button>
+            <ListItemIcon>
+              <CodeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Frameworks" />
+          </ListItem>
+        </Link>
 
-  const fullList = side => (
-    <div
-      className={classes.fullList}
-      role="presentation"
-      onClick={props.toggleDrawer(side, false)}
-      onKeyDown={props.toggleDrawer(side, false)}>
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
+        <Link className={classes.link} to="/databases">
+          <ListItem button>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <StorageIcon />
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary="Bases de données" />
           </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
+        </Link>
+        <Link className={classes.link} to="/orm-odm-db">
+          <ListItem button>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <StorageIcon />
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary="ORM et ODM" />
           </ListItem>
-        ))}
+        </Link>
+        <Link className={classes.link} to="/environements">
+          <ListItem button>
+            <ListItemIcon>
+              <DevicesIcon />
+            </ListItemIcon>
+            <ListItemText primary="Environements" />
+          </ListItem>
+        </Link>
+        <Link className={classes.link} to="/os">
+          <ListItem button>
+            <ListItemIcon>
+              <ComputerIcon />
+            </ListItemIcon>
+            <ListItemText primary="Systèmes d'exploitations" />
+          </ListItem>
+        </Link>
+        <Link className={classes.link} to="/ide-editeurs">
+          <ListItem button>
+            <ListItemIcon>
+              <DeveloperModeIcon />
+            </ListItemIcon>
+            <ListItemText primary="IDE et Éditeurs" />
+          </ListItem>
+        </Link>
+
+        <Link className={classes.link} to="/realisations">
+          <ListItem button>
+            <ListItemIcon>
+              <CollectionsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Mes Réalisations" />
+          </ListItem>
+        </Link>
+        <Link className={classes.link} to="/contact">
+          <ListItem button>
+            <ListItemIcon>
+              <MailIcon />
+            </ListItemIcon>
+            <ListItemText primary="Contact" />
+          </ListItem>
+        </Link>
       </List>
     </div>
   );
@@ -88,24 +166,6 @@ export default function TemporaryDrawer(props) {
         open={props.state.left}
         onClose={props.toggleDrawer('left', false)}>
         {sideList('left')}
-      </Drawer>
-      <Drawer
-        anchor="top"
-        open={props.state.top}
-        onClose={props.toggleDrawer('top', false)}>
-        {fullList('top')}
-      </Drawer>
-      <Drawer
-        anchor="bottom"
-        open={props.state.bottom}
-        onClose={props.toggleDrawer('bottom', false)}>
-        {fullList('bottom')}
-      </Drawer>
-      <Drawer
-        anchor="right"
-        open={props.state.right}
-        onClose={props.toggleDrawer('right', false)}>
-        {sideList('right')}
       </Drawer>
     </div>
   );
